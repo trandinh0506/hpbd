@@ -169,7 +169,7 @@ class main {
     this.draw();
     this.ctx.font = "55px Sofia";
     this.ctx.fillText("Happy Birthday", 10, 100);
-    this.ctx.fillText("Lê Ngọc", 100, 260, 300);
+    this.ctx.fillText("Lê Ngọc", 120, 260, 300);
     this.ctx.fillText("Ánh Duyên", 70, 400, 300);
 
     setTimeout(() => this.loop(), 50);
