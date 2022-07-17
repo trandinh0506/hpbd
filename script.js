@@ -184,5 +184,53 @@ class main {
     this.bullets.forEach((bullet) => bullet.draw());
   }
 }
+const sound = new Audio("./sound.mp3");
+document.body.style.backgroundColor = "black";
+var div = document.createElement("div");
+div.setAttribute("class", "hello");
+div.innerText =
+  "Chúc mừng sinh nhật của một trong những công dân xinh đẹp, mỹ miều, kiêu sa yêu kiều nhất trên quả đất này nhé!";
+document.body.appendChild(div);
+const btn = document.createElement("button");
+btn.setAttribute("class", "btn");
+btn.innerText = "→";
+document.body.appendChild(btn);
+btn.onclick = () => {
+  document.body.removeChild(div);
+  document.body.removeChild(btn);
+  div.innerText =
+    "À không phải là\nCông dân xinh đẹp, mỹ miều, kiêu sa yêu kiều nhất hệ Mặt Trời mới đúng :))";
+  document.body.appendChild(div);
 
-var g = new main();
+  const btn2 = document.createElement("button");
+  btn2.innerText = "→";
+  btn2.setAttribute("class", "btn");
+  document.body.appendChild(btn2);
+
+  btn2.onclick = () => {
+    sound.play();
+    document.body.removeChild(div);
+    document.body.removeChild(btn2);
+    div.innerText = `Chúc cho mọi điều may mắn nhất luôn luôn mỉm cười vào bạn
+    Chúc cho hạnh phúc luôn đến với bạn…
+    Chúc mọi điều tốt nhất sẽ đến bên bạn.
+    Mong cho tất cả những giấc mơ của bạn sẽ trở thành sự thật`;
+    div.style.marginTop = "-120px";
+    document.body.appendChild(div);
+    const btn3 = document.createElement("button");
+    btn3.innerText = "→";
+    btn3.setAttribute("class", "btn");
+    div.innerText = "Happy Birthday\nSinh nhật vui vẻ!!!";
+    div.style.marginTop = "55px";
+    document.body.appendChild(div);
+    document.body.appendChild(btn3);
+    btn3.onclick = () => {
+      setInterval(function () {
+        sound.play();
+      }, (180 + 28) * 1000);
+      document.body.removeChild(btn3);
+      document.body.removeChild(div);
+      new main();
+    };
+  };
+}; //
