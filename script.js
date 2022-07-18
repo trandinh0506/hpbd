@@ -227,6 +227,7 @@ btn.onclick = () => {
     document.body.appendChild(div);
     document.body.appendChild(btn3);
     btn3.onclick = () => {
+      sound.play();
       div.innerText = "Happy Birthday\nSinh nhật vui vẻ!!!";
       div.style.marginTop = "55px";
       document.body.removeChild(btn3);
