@@ -18,12 +18,22 @@
         font-size: 35px;
         color: red;
         text-align: center;
+        animation: cometo 2s linear;
+        margin-left: 0px;
       }
       .btn {
         color: green;
         font-size: 20px;
         margin-top: 10%;
         margin-left: 45%;
+      }
+      @keyframes cometo {
+        from {
+          margin-left: -1000px;
+        }
+        to {
+          margin-left: 0px;
+        }
       }
     </style>
     <meta charset="UTF-8" />

@@ -19,7 +19,7 @@ class star {
     // this.x += this.SPEED_X;
     // this.y += this.SPEED_y;
 
-    if (this.A > 7) {
+    if (this.A > 5) {
       this.B = this.A / (1 + Math.sqrt(5) / 2);
       this.A -= this.CHANGE_SIZE_SPEED;
     }
@@ -168,9 +168,11 @@ class main {
   loop() {
     this.draw();
     this.ctx.font = "55px Sofia";
-    this.ctx.fillText("Happy Birthday", 10, 100);
-    this.ctx.fillText("Lê Ngọc", 120, 260, 300);
-    this.ctx.fillText("Ánh Duyên", 70, 400, 300);
+    this.ctx.fillText("Happy Birthday", 10, 110);
+    this.ctx.fillText("Lê Ngọc", 120, 270, 300);
+    this.ctx.fillText("Ánh Duyên", 70, 410, 300);
+    this.ctx.font = "11px Sofia";
+    this.ctx.fillText("Đẹp gái nhất hệ Mặt Trời :))", 260, 445);
 
     setTimeout(() => this.loop(), 50);
   }
@@ -189,8 +191,10 @@ document.body.style.backgroundColor = "black";
 var div = document.createElement("div");
 div.setAttribute("class", "hello");
 div.innerText =
-  "Chúc mừng sinh nhật của một trong những công dân xinh đẹp, mỹ miều, kiêu sa yêu kiều nhất trên quả đất này nhé!";
+  "Chúc mừng sinh nhật của\nmột trong những công dân\nxinh đẹp, mỹ miều, kiêu sa\nyêu kiều nhất trên quả đất\nnày nhé!";
+
 document.body.appendChild(div);
+
 const btn = document.createElement("button");
 btn.setAttribute("class", "btn");
 btn.innerText = "→";
@@ -199,7 +203,7 @@ btn.onclick = () => {
   document.body.removeChild(div);
   document.body.removeChild(btn);
   div.innerText =
-    "À không phải là\nCông dân xinh đẹp, mỹ miều, kiêu sa yêu kiều nhất hệ Mặt Trời mới đúng :))";
+    "À không phải là\nCông dân xinh đẹp,\nmỹ miều,kiêu sa\nyêu kiều nhất hệ Mặt Trời\nmới đúng :))";
   document.body.appendChild(div);
 
   const btn2 = document.createElement("button");
@@ -208,29 +212,37 @@ btn.onclick = () => {
   document.body.appendChild(btn2);
 
   btn2.onclick = () => {
-    sound.play();
     document.body.removeChild(div);
     document.body.removeChild(btn2);
-    div.innerText = `Chúc cho mọi điều may mắn nhất luôn luôn mỉm cười vào bạn
-    Chúc cho hạnh phúc luôn đến với bạn…
-    Chúc mọi điều tốt nhất sẽ đến bên bạn.
-    Mong cho tất cả những giấc mơ của bạn sẽ trở thành sự thật`;
+    div.innerText = `Chúc cho mọi điều may\nmắn nhất luôn luôn mỉm\ncười vào bạn
+    Chúc cho hạnh phúc luôn\nđến với bạn…
+    Chúc mọi điều tốt nhất sẽ\nđến bên bạn.
+    Mong cho tất cả những\ngiấc mơ của bạn sẽ trở\nthành sự thật`;
     div.style.marginTop = "-120px";
     document.body.appendChild(div);
     const btn3 = document.createElement("button");
     btn3.innerText = "→";
     btn3.setAttribute("class", "btn");
-    div.innerText = "Happy Birthday\nSinh nhật vui vẻ!!!";
-    div.style.marginTop = "55px";
+
     document.body.appendChild(div);
     document.body.appendChild(btn3);
     btn3.onclick = () => {
+      div.innerText = "Happy Birthday\nSinh nhật vui vẻ!!!";
+      div.style.marginTop = "55px";
+      document.body.removeChild(btn3);
       setInterval(function () {
         sound.play();
       }, (180 + 28) * 1000);
-      document.body.removeChild(btn3);
-      document.body.removeChild(div);
-      new main();
+
+      const btn4 = document.createElement("button");
+      btn4.setAttribute("class", "btn");
+      btn4.innerText = "→";
+      document.body.appendChild(btn4);
+      btn4.onclick = () => {
+        document.body.removeChild(btn4);
+        document.body.removeChild(div);
+        new main();
+      };
     };
   };
-}; //
+};
